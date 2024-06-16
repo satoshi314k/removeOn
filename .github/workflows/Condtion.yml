@@ -5,5 +5,7 @@ jobs:
   skip-or-run:
     runs-on: ubuntu-latest
     steps:
-     - run: echo "HEE"
+     - run: echo "$hi"
        if: ${{contains(github.run_id,'1')}}
+       env: 
+        hi: ${{github.run_id}}
