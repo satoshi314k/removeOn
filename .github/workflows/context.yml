@@ -4,7 +4,6 @@ on: push
 
 jobs:
   print:
-  runs-on: ubunts-lantest
-
-  step:
+   runs-on: ubunts-lantest
+   steps:
    - run: echo "${{github.actor}}"
