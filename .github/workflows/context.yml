@@ -4,7 +4,7 @@ on: push
 
 jobs:
   run:
-    runs-on: ubunts-lantest
+    runs-on: ubuntu-latest
     env:
       BRANCH: main
     steps:
