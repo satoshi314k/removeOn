@@ -6,10 +6,9 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      BRANCH: main
+      ACTOR: ${{github.actor}}
     steps:
-      - run: echo "${GITHUB_ACTOR}"
+      - run: echo "${ACTOR}"
       - uses: actions/checkout@v4
         with:
           ref: ${{env.BRANCH}}
-
