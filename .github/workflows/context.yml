@@ -6,7 +6,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      ACTOR: ${{vars.USERNAME}}
+      ACTOR: ${{secrets.SEE}}
     steps:
       - run: echo "${ACTOR}"
       - uses: actions/checkout@v4
