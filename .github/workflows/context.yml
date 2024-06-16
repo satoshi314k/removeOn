@@ -1,9 +1,15 @@
-name: Contexts
+name: env
 
 on: push
 
 jobs:
-  print:
-   runs-on: ubunts-lantest
-   steps:
-   - run: echo "${{github.actor}}"
+  run:
+    runs-on: ubunts-lantest
+    env:
+      BRANCH: main
+    steps:
+      - run: echo "${BRANCH}"
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{env.BRANCH}}
+
