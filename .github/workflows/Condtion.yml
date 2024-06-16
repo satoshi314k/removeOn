@@ -1,11 +1,10 @@
-name: Condtion
+name: name
 
 on: push
 jobs:
-  skip-or-run:
+  faile:
     runs-on: ubuntu-latest
     steps:
-     - run: echo "$hi"
-       if: ${{contains(github.run_id,'1')}}
-       env: 
-        hi: ${{github.run_id}}
+      - run: exit 1
+      - run: echo "hell"
+        if: ${{ failure()}}
