@@ -12,4 +12,4 @@ jobs:
       - name: Add comment to pull request
         run: gh pr comment ${{ github.event.pull_request.number }} --body "Hello ${{ github.actor }}"
         env: 
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ github.token }}
