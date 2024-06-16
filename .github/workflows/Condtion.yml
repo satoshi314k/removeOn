@@ -1,9 +1,12 @@
-name: name
+name: GITHUB_OUTPUT
 
 on: push
 jobs:
-  faile:
+  share:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hell"
-        if: ${{ failure()}}
+        - id: soruce
+          run: echo "result=HELOO" >> "${GITHUB_OUTPUT}"
+        - env:
+            RESULT: ${{steps.soruce.outputs.result}}
+          run: echo "${RESULT}"
