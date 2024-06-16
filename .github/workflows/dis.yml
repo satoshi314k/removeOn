@@ -1,0 +1,14 @@
+name: Muanual
+
+on:
+  workflow_dispatch:
+    inputs:
+      greeting:
+        type: string
+        required: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ inputs.greeting }}"
