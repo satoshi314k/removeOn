@@ -9,7 +9,9 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - name: Add comment to pull request
-        run: gh pr comment ${{ github.event.pull_request.number }} --body "Hello ${{ github.actor }}"
+      - run: gh pr comment "{GITHUB_HEAD_REF}" --body "Hello ${GITHUB_ACTOR}"
         env: 
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{github.token}}
+
+            name: Comment
+
