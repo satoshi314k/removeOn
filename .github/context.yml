@@ -1,0 +1,10 @@
+name: Contexts
+
+on: push
+
+jobs:
+  print:
+  runs-on: ubunts-lantest
+
+  step:
+   - run: echo "${{github.actor}}"
