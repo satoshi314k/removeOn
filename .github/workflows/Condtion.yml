@@ -12,3 +12,6 @@ jobs:
       - run: gh pr comment "{GITHUB_HEAD_REF}" --body "Hello ${GITHUB_ACTOR}"
         env: 
             GITHUB_TOKEN: ${{github.token}}
+
+            name: Comment
+
